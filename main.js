@@ -1,7 +1,7 @@
 'use strict';
 
 let liList = document.getElementsByTagName('li');
-
+console.log(liList);
 function isElementInViewport(el) {
     var rect = el.getBoundingClientRect();
     return (
