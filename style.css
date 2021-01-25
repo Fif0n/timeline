@@ -1,0 +1,130 @@
+*{
+    color: white;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo-bar {
+    display: flex;
+    height: 200px;
+    width: 100%;
+    background-color: rgb(81, 185, 159);  
+    justify-content: center;
+    font-size: 26px;
+    align-items: center;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(53, 101, 133);
+}
+.timeline {  
+    display: flex;
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 40px 0 40px 0;
+}
+ul {
+    list-style: none;
+}
+li {
+    padding: 10px 40px;
+    position: relative;
+    background-color:  rgb(81, 185, 159);
+    width: 50%;
+    margin: 20px 0;
+    opacity: 0;   
+    transition: .8s; 
+     
+}
+li:nth-child(odd){
+    left: -200px;
+}
+li:nth-child(even){
+    right: -200px;
+}
+.visible:nth-child(even) {
+    opacity: 1;
+    right: 0;
+}
+.visible:nth-child(even)::after {
+    left: -30px;
+}
+.visible:nth-child(odd)::after {
+    right: -30px;
+}
+.visible:nth-child(odd) {
+    opacity: 1;
+    left: 0;
+}
+li time {
+    font-size: 28px;
+    font-weight: 700;
+    display: flex;
+}
+li::after {
+    content: '';
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(81, 185, 159);
+    border-radius: 50%;
+    bottom: 0;
+}
+
+li:nth-child(odd){
+    float: left;
+    clear: right;
+    transform: translateX(-30px);
+}
+li:nth-child(even){
+    float: right;
+    clear: left;
+    transform: translateX(30px);
+}
+li:nth-child(odd)::after {
+    right: -230px;
+    transform: translateX(50%);
+}
+li:nth-child(odd)::before {
+    content: '';
+    height: 0;
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    z-index: 1;
+    right: -10px;
+    border: medium solid rgb(81, 185, 159);
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent rgb(81, 185, 159);
+}
+li:nth-child(even)::after {
+    left: -230px;
+    transform: translateX(-50%);
+}
+li:nth-child(even)::before {
+    content: '';
+    height: 0;
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    z-index: 1;
+    left: -10px;
+    border: medium solid rgb(81, 185, 159);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent rgb(81, 185, 159) transparent transparent;
+}
